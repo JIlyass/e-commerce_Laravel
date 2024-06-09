@@ -91,13 +91,68 @@
 										<li><a href="cart.html">Cart</a></li>
 									</ul>
 								</li>
+								
+									{{-- @auth
+									
+									<div class="dropdown text-end">
+										<a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+										<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+										</a>
+										<ul class="dropdown-menu text-small" style="">
+										<li><a class="dropdown-item" >Welcome {{Auth::user()->name}}</a></li>
+										{{-- <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li> --}}
+										
+										{{-- <li><hr class="dropdown-divider"></li>
+										<li>
+											<form class="dropdown-item" action="{{route('auth.logout')}}" method="POST">
+											@csrf
+											@method('delete')
+											<input type="submit" value="Sign out">
+											</form>
+										</li>
+										</ul>
+									</div>
+										@else
+										<div class="text-end">
+											<a href="{{route('auth.login')}}" type="button" class="btn btn-outline-secondary me-2">Login</a>
+											<a href="{{route('auth.register')}}" type="button" class="btn btn-warning">Sign-up</a>
+										  </div>
+									@endauth --}} 
+								
+								@auth
 								<li>
-									<div class="header-icons">
+									<a href="#"><img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"></a>
+									<ul class="sub-menu">
+										<li><a >Welcome {{Auth::user()->name}}</a></li>
+										{{-- <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li> --}}
+										<li><hr class="dropdown-divider"></li>
+										<li>
+											<form class="dropdown-item" action="{{route('auth.logout')}}" method="POST">
+											@csrf
+											@method('delete')
+											<input type="submit" value="Sign out">
+											</form>
+										</li>
+										
+									</ul>
+								</li>
+									@else
+									<li><a href="{{route('auth.login')}}" type="button" class="btn btn-outline-secondary ">Login</a></li>
+									<li><a href="{{route('auth.register')}}" type="button" class="btn btn-warning">Sign-up</a></li>
+							
+								@endauth
+							
+						
+								<li>
+									
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-									</div>
+									
 								</li>
+								
 							</ul>
+							
+						</div>
 						</nav>
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 						<div class="mobile-menu"></div>

@@ -28,15 +28,6 @@ class homeController extends Controller
             return $category;
         });
 
-
-        // $categories = Categorie::with(['produits.produitsImages'])->get();
-
-        // $categories = $categories->map(function ($category) {
-        //     $category->produits = $category->produits->take(3);
-        //     return $category;
-        // });
-        // dd($categories);
-
-        return view('welcome', compact('categories'));
+        return view('home', compact('categories'));
     }
 }
