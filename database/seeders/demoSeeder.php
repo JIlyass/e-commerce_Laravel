@@ -23,7 +23,7 @@ class demoSeeder extends Seeder
         ]);
         DB::table('produits')->insert([
             "nomPr"=>"VPN",
-            "description"=>"VPN tres puissant !! ", 
+            "description"=>"VPN tres puissant !!! ", 
             "prixA"=>"150", 
             "PrixOrigin"=>"250", 
             "prixV"=>"199", 								
@@ -39,6 +39,8 @@ class demoSeeder extends Seeder
             "qteS"=>"10", 								
             "categorie_id"=>"2", 								
         ]);
+        
+       
         DB::table('produits_images')->insert([
             "produit_id"=>"1",
             "path"=>"img_demo_vpn.jpeg",
@@ -49,5 +51,7 @@ class demoSeeder extends Seeder
             "path"=>"img_demo_pc.jpeg",
             "isOfficiel"=>true								
         ]);
+        
+     
     }
 }
