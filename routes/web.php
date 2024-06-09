@@ -34,7 +34,7 @@ Route::prefix("dashboard/design")
     Route::get('',"index")->name("index");
 });
 
-// home controller 
+// home controller
 Route::get("/",[homeController::class,"index"])->name('home.index');
 
 // Auth Routes
@@ -42,10 +42,11 @@ Route::controller(AuthController::class)
     ->prefix('auth')
     ->name('auth.')
     ->group(function (){
-        Route::get('login',function(){
-            return view('auth.login');
-        })->name("login");
+        Route::get('register','register')->name("register");
+        Route::post('register','to_register')->name('register');
+        Route::get('login','login')->name("login");
         Route::post('login','to_login')->name('login');
+        Route::post('logout','logout')->name('logout');
 
     });
 

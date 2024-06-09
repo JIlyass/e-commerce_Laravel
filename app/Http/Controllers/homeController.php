@@ -14,6 +14,6 @@ class homeController extends Controller
         //  $db_prd=Produit::all();
          $db_prd=DB::select("select * from produits prd join produits_images pi on prd.id=pi.produit_id where isOfficiel=1");
          $db_cat=Categorie::all();
-        return view('welcome',compact("db_prd","db_cat"));
+        return view('home',compact("db_prd","db_cat"));
     }
 }

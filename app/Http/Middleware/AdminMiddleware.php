@@ -11,12 +11,17 @@ class AdminMiddleware
 {
   
     
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next,): Response
     {
-        if(!Auth::guest()){
-            return $next($request);
-        }
-        return to_route('auth.login');
+        
+            if(!Auth::check()){
+                return redirect()->route('auth.login');
+            }
+    
+            if(Auth::user()->role == "admin"){
+                return $next($request);
+            }
+            return abort(419);
         
     }
 }
