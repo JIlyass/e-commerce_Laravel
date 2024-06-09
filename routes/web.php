@@ -46,9 +46,10 @@ Route::controller(AuthController::class)
         Route::post('register','to_register')->name('register');
         Route::get('login','login')->name("login");
         Route::post('login','to_login')->name('login');
-        Route::post('logout','logout')->name('logout');
+        Route::delete('logout','logout')->name('logout');
 
     });
 
 
-Route::resource("products",productsController::class);
+// Route::resource("products",productsController::class);
+Route::get("/produits/{idCat}",[productsController::class,"index"])->name("produtcs.index");

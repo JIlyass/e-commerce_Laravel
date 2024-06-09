@@ -13,7 +13,7 @@ class AuthController extends Controller
         return view('Auth.register');
     }
     public function to_register(Request $req)  {
-        $req->validate(
+        $log=$req->validate(
             [
                 'name' => 'required|alpha|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
@@ -26,6 +26,17 @@ class AuthController extends Controller
             'password' => Hash::make($req->password),
             // Add other fields as needed
         ]);
+        if(Auth::attempt($log)){
+            session()->regenerate();
+            return to_route("dashboard.index");
+        }else{
+            return to_route('auth.login')
+            ->withErrors("email","Email ou password incorrecte !! ")
+            ->withInput(['email'])
+            ;
+        }
+        return to_route('dashboard.index');
+
     }
 
 public function login(){
@@ -45,9 +56,11 @@ public function to_login(Request $req){
             ->withInput(['email'])
             ;
         }
+        return to_route('dashboard.index');
     }
 
 public function logout() {
     Auth::logout();
+    return to_route('home.index');
 }
 }

@@ -31,7 +31,7 @@
     <!-- Login Form -->
     <form action="{{route('auth.register')}}" method="POST">
         @csrf
-      <input type="text" id="name" class="fadeIn second" placeholder="email"  name="email" value="{{old('name')}}" required>
+      <input type="text" id="name" class="fadeIn second" placeholder="name"  name="name" value="{{old('name')}}" required>
       <input type="text" id="name" class="fadeIn second" placeholder="email"  name="email" value="{{old('email')}}" required>
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="password" id="password" class="fadeIn third" name="password_confirmation" placeholder="confirm password">
