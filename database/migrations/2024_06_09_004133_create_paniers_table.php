@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId("client_id")->constrained("clients","id");
             $table->foreignId("user_id")->constrained("users","id");
+            $table->integer("qte");
             $table->timestamps();
         });
     }
