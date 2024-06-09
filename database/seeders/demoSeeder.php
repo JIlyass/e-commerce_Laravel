@@ -23,7 +23,7 @@ class demoSeeder extends Seeder
         ]);
         DB::table('produits')->insert([
             "nomPr"=>"VPN",
-            "description"=>"VPN tres puissant !! ", 
+            "description"=>"VPN tres puissant !!! ", 
             "prixA"=>"150", 
             "PrixOrigin"=>"250", 
             "prixV"=>"199", 								
@@ -39,15 +39,43 @@ class demoSeeder extends Seeder
             "qteS"=>"10", 								
             "categorie_id"=>"2", 								
         ]);
-        DB::table('produits_images')->insert([
-            "produit_id"=>"1",
-            "path"=>"img_demo_vpn.jpeg",
-            "isOfficiel"=>true								
+        DB::table('produits')->insert([
+            "nomPr"=>"Clavier",
+            "description"=>"Nice Clavier", 
+            "prixA"=>"500", 
+            "PrixOrigin"=>null, 
+            "prixV"=>"600", 								
+            "qteS"=>"10", 								
+            "categorie_id"=>"2", 								
+        ]);
+        DB::table('produits')->insert([
+            "nomPr"=>"Windows 11",
+            "description"=>"Windows 11 activé + pack office 365", 
+            "prixA"=>"80", 
+            "PrixOrigin"=>null, 
+            "prixV"=>"100", 								
+            "qteS"=>"100", 								
+            "categorie_id"=>"1", 								
         ]);
         DB::table('produits_images')->insert([
             "produit_id"=>"2",
             "path"=>"img_demo_pc.jpeg",
             "isOfficiel"=>true								
+        ]);
+        DB::table('produits_images')->insert([
+            "produit_id"=>"3",
+            "path"=>"imgOff_1717892308922.jpg",
+            "isOfficiel"=>true								
+        ]);
+        DB::table('produits_images')->insert([
+            "produit_id"=>"4",
+            "path"=>"imgOff_1717892434932.jpg",
+            "isOfficiel"=>true								
+        ]);
+        DB::table('produits_images')->insert([
+            "produit_id"=>"4",
+            "path"=>"img_1717892434952.jpg",
+            "isOfficiel"=>false								
         ]);
     }
 }
