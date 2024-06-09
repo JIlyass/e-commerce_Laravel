@@ -67,6 +67,17 @@
           <span class="theme-ball"></span>
         </div>
       </div>
+      <div class="theme-wrapper">
+       <a href="#"> <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"></a>
+       <p>
+        <form class="dropdown-item" action="{{route('auth.logout')}}" method="POST">
+        @csrf
+        @method('delete')
+        <input type="submit" value="Sign out">
+        </form>
+      </p>
+
+      </div>
     </section>
     {{-- <section class="home">
       <p>Home Content Here</p>
