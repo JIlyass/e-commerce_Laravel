@@ -19,7 +19,7 @@ class homeController extends Controller
 
       public function index()
     {
-
+        //saad 
         $categories = Categorie::with('produits')->get();
 
 
@@ -27,6 +27,15 @@ class homeController extends Controller
             $category->produits = $category->produits->take(3);
             return $category;
         });
+
+
+        // $categories = Categorie::with(['produits.produitsImages'])->get();
+
+        // $categories = $categories->map(function ($category) {
+        //     $category->produits = $category->produits->take(3);
+        //     return $category;
+        // });
+        // dd($categories);
 
         return view('welcome', compact('categories'));
     }

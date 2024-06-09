@@ -61,11 +61,16 @@
 		
 		<div class="row">
 		    @foreach($category->produits as $product)  
-			{{dd($product)}}
+			{{-- {{dd($product)}} --}}
 			    <div class="col-lg-4 col-md-6 text-center">
 				    <div class="single-product-item">
 					    <div class="product-image">
-						    <img src="{{url("storage/images/".$product->path)}}" alt="">
+							
+							
+						    <img src="{{url("storage/images/".DB::table('produits_images')
+											->where('produit_id', $product->id)
+											->where('isOfficiel', 1)
+											->value('path') )}}" alt="">
 					    </div>
 					    <h3>{{$product->nomPr}}</h3>
 					    <p class="product-price"><span>Par antité</span> {{$product->prixV}} dhs </p>
