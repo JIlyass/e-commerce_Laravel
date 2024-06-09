@@ -9,15 +9,19 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    public function profile()  {
+        return view('Auth.profile');
+    }
     public function register()  {
         return view('Auth.register');
     }
     public function to_register(Request $req)  {
         $log=$req->validate(
             [
-                'name' => 'required|alpha|max:255',
+                'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
-                'password' => 'required|string|min:8|confirmed',
+                'password' => 'required|string|min:8',
+                'password_confirmation' => 'required|string|min:8|same:password',
             ]
         );
         $user = User::create([

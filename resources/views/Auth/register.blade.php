@@ -34,8 +34,8 @@
       <input type="text" id="name" class="fadeIn second" placeholder="name"  name="name" value="{{old('name')}}" required>
       <input type="text" id="name" class="fadeIn second" placeholder="email"  name="email" value="{{old('email')}}" required>
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-      <input type="password" id="password" class="fadeIn third" name="password_confirmation" placeholder="confirm password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="password"  class="fadeIn third" name="password_confirmation" placeholder="confirmer password">
+      <input type="submit" class="fadeIn fourth" value="S'inscrire">
     </form>
 
     <!-- Remind Passowrd -->

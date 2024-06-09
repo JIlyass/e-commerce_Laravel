@@ -42,6 +42,8 @@ Route::controller(AuthController::class)
     ->prefix('auth')
     ->name('auth.')
     ->group(function (){
+
+        Route::get('profile','profile')->name("profile");
         Route::get('register','register')->name("register");
         Route::post('register','to_register')->name('register');
         Route::get('login','login')->name("login");

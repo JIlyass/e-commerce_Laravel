@@ -139,17 +139,20 @@
 									@else
 									<li><a href="{{route('auth.login')}}" type="button" class="btn btn-outline-secondary ">Login</a></li>
 									<li><a href="{{route('auth.register')}}" type="button" class="btn btn-warning">Sign-up</a></li>
-										  </div>
+							
 								@endauth
-
+							
+						
 								<li>
-									<div class="header-icons">
+									
 										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-									</div>
+									
 								</li>
 								
 							</ul>
+							
+						</div>
 						</nav>
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 						<div class="mobile-menu"></div>

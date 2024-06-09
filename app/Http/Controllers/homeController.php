@@ -19,7 +19,7 @@ class homeController extends Controller
 
       public function index()
     {
-
+        //saad 
         $categories = Categorie::with('produits')->get();
 
 
