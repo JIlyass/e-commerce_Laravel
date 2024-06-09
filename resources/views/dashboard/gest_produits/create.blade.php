@@ -1,6 +1,6 @@
 @extends('_layouts.layoutsDash')
 @section('content')
-
+<h5 class="text-center alert alert-warning">Ajouter un Nouveau produit</h5>
   <form method="post" action="{{route('dashboard.produits.store')}}" enctype="multipart/form-data"  >
   @csrf
     <div class="mb-3">
