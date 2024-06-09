@@ -77,6 +77,9 @@
 					    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 				    </div>
 			    </div>
+				<div>
+					<a href="{{route('produtcs.index',['idCat'=>$category->id] )}}" > <button class="btn btn-primary">Plus de produit de cette categorie</button></a>
+				</div>
 		    @endforeach
 			
 		</div>
