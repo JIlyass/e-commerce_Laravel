@@ -44,10 +44,43 @@
 
 	</div>
 </div>
-{{-- end free shipping ... --}}
+
+
+@foreach ($categories as $category)
+
+<div class="product-section mt-150 mb-150">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 offset-lg-2 text-center">
+				<div class="section-title">	
+					<h3><span class="orange-text">Tous ce qu'est </span> {{$category->nomCat}}</h3>
+					<p> {{$category->description}}</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+		    @foreach($category->produits as $product)  
+			    <div class="col-lg-4 col-md-6 text-center">
+				    <div class="single-product-item">
+					    <div class="product-image">
+						    <a href="single-product.html"><img src="{{url("storage/images/".$product->path)}}" alt="product_img"></a>
+					    </div>
+					    <h3>{{$product->nomPr}}</h3>
+					    <p class="product-price"><span>Par antité</span> {{$product->prixV}} dhs </p>
+					    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+				    </div>
+			    </div>
+		    @endforeach
+			
+		</div>
+	</div>
+</div>
+@endforeach
 
 
 
+{{-- 
 <!-- product section -->
 @for ($i = 0; $i < count($db_cat); $i++)
 	
@@ -86,7 +119,7 @@
 	</div>
 </div>
 
-@endfor
+@endfor --}}
 <!-- end product section -->
 
 <!-- cart banner section :: l3orod --> 
