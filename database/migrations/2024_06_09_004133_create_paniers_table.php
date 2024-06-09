@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('paniers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("client_id")->constrained("clients","id");
+            $table->foreignId("produit_id")->constrained("produits","id");
             $table->foreignId("user_id")->constrained("users","id");
             $table->integer("qte");
             $table->timestamps();
