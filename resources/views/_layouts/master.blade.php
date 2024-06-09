@@ -42,7 +42,7 @@
     <!--PreLoader Ends-->
 	
 	<!-- header -->
-	<div class="top-header-area" id="sticker">
+	<div class="top-header-area" id="sticker" style="background-color: rgb(5,25,34)">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 text-center">
@@ -125,11 +125,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> <br> <br>
 	<!-- end search area -->
 
 	<!-- home page slider -->
-	<div class="homepage-slider">
+	{{-- <div class="homepage-slider">
 		<!-- single home slider -->
 		<div class="single-homepage-slider homepage-bg-1">
 			<div class="container">
@@ -187,7 +187,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- end home page slider -->
 
 

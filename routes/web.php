@@ -50,4 +50,5 @@ Route::controller(AuthController::class)
     });
 
 
-Route::resource("products",productsController::class);
+// Route::resource("products",productsController::class);
+Route::get("/produits/{idCat}",[productsController::class,"index"])->name("produtcs.index");
