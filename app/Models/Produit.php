@@ -15,6 +15,6 @@ class Produit extends Model
     }
 
     public function produitsImages(){
-        return $this->hasMany(ProduitImage::class,"produit_id");
+        return $this->hasMany(ProduitImage::class,"produit_id")->where('isOfficiel', true);
     }
 }
