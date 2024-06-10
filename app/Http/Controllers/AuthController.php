@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function profile()  {
-        return view('Auth.profile');
-    }
+   
     public function register()  {
         return view('Auth.register');
     }
@@ -67,4 +65,54 @@ public function logout() {
     Auth::logout();
     return to_route('home.index');
 }
+
+// ---------------------------Profile
+
+public function edit()
+{
+    return view('auth.profile', ['user' => Auth::user()]);
+}
+
+public function update(Request $request)
+{
+    $user =User::find(Auth::user()->id);
+
+    $request->validate( [
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+    ]);
+
+   
+
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->save();
+
+    return redirect()->route('auth.profile')->with('status', 'Profile updated successfully!');
+}
+
+public function updatePassword(Request $request)
+{
+    $user =User::find(Auth::user()->id);
+
+    $request->validate( [
+        'current_password' => 'required',
+        'new_password' => 'required|string|min:8|confirmed',
+    ]);
+
+    
+    if (!Hash::check($request->current_password, $user->password)) {
+        return redirect()->route('profile.edit')
+                         ->withErrors(['current_password' => 'Current password does not match.'])
+                         ->withInput();
+    }
+    
+    $user->password = Hash::make($request->new_password);
+    $user->save();
+
+    return redirect()->route('auth.profile')->with('status', 'Password updated successfully!');
+}
+
+
+
 }

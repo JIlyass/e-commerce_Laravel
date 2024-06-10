@@ -43,15 +43,19 @@ Route::controller(AuthController::class)
     ->name('auth.')
     ->group(function (){
 
-        Route::get('profile','profile')->name("profile");
         Route::get('register','register')->name("register");
         Route::post('register','to_register')->name('register');
         Route::get('login','login')->name("login");
         Route::post('login','to_login')->name('login');
         Route::delete('logout','logout')->name('logout');
+        Route::get('/profile', [AuthController::class, 'edit'])->name('profile');
+        Route::post('/profile', [AuthController::class, 'update'])->name('profile.update');
+        Route::post('/profile/password', [AuthController::class, 'updatePassword'])->name('profile.updatePassword');
 
     });
 
 
 // Route::resource("products",productsController::class);
 Route::get("/produits/{idCat}",[productsController::class,"index"])->name("produtcs.index");
+
+

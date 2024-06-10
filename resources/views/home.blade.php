@@ -46,10 +46,11 @@
 </div>
 
 
-@foreach ($categories as $category)
+
 
 <div class="product-section mt-150 mb-150">
 	<div class="container">
+		@foreach ($categories as $category)
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 text-center">
 				<div class="section-title">	
@@ -67,7 +68,7 @@
 					    <div class="product-image">
 							
 							
-						    <img src="{{url("storage/images/".DB::table('produits_images')
+						    <img height="150px" width="250px" src="{{url("storage/images/".DB::table('produits_images')
 											->where('produit_id', $product->id)
 											->where('isOfficiel', 1)
 											->value('path') )}}" alt="">
@@ -77,15 +78,35 @@
 					    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 				    </div>
 			    </div>
-				<div>
-					<a href="{{route('produtcs.index',['idCat'=>$category->id] )}}" > <button class="btn btn-primary">Plus de produit de cette categorie</button></a>
-				</div>
+				
 		    @endforeach
-			
+			<div class="row">
+			<a href="{{route('produtcs.index',['idCat'=>$category->id] )}}"@style(
+				button {
+  font-size: 1rem;
+  padding: 0.8em 2em;
+  background-color: #000;
+  border: 3px solid yellow;
+  border-radius: 1em;
+  color: #fff;
+  font-weight: bolder;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+  box-shadow: -5px 5px 0px 0px yellow;
+}
+
+button:hover {
+  transform: translate(5px, -5px);
+}
+				) >
+				Tous les produits
+				</a>
 		</div>
+		</div>
+		
+		@endforeach
 	</div>
 </div>
-@endforeach
+
 
 
 

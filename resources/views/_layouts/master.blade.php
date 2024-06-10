@@ -125,7 +125,9 @@
 									<ul class="sub-menu">
 										<li><a >Welcome {{Auth::user()->name}}</a></li>
 										{{-- <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li> --}}
+										<li><a href="{{route('dashboard.index')}}">{{auth::user()->role=="admin"?"Dashboard":"Profile"}}</a></li>
 										<li><hr class="dropdown-divider"></li>
+										
 										<li>
 											<form class="dropdown-item" action="{{route('auth.logout')}}" method="POST">
 											@csrf

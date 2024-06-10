@@ -1,6 +1,6 @@
     <section class="sidebar">
       <div class="nav-header">
-        <p class="logo">Dashboard</p>
+        <p class="logo">Profile</p>
         <i class="bx bx-menu btn-menu"></i>
       </div>
       <ul class="nav-links">
