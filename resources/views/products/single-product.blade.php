@@ -33,7 +33,7 @@
 							<form action="index.html">
 								<input type="number" placeholder="0">
 							</form>
-							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+							<a href="{{route('produtcs.addToPanier',['idPr'=>$produit[0]->id])}}"  class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 							<p><strong>Categorie: {{$nomCat}}</strong></p>
 						</div>
 						<h4>Share:</h4>
