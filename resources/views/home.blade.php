@@ -67,18 +67,18 @@
 					    <div class="product-image">
 							
 							
-						    <img src="{{url("storage/images/".DB::table('produits_images')
+						   <a href="{{route('produtcs.single-product',['idPr'=>$product->id])}}"> <img src="{{url("storage/images/".DB::table('produits_images')
 											->where('produit_id', $product->id)
 											->where('isOfficiel', 1)
-											->value('path') )}}" alt="">
+											->value('path') )}}" alt=""> </a>
 					    </div>
 					    <h3>{{$product->nomPr}}</h3>
 					    <p class="product-price"><span>Par antité</span> {{$product->prixV}} dhs </p>
-					    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					    <a href="{{route('produtcs.addToPanier',['idPr'=>$product->id])}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 				    </div>
 			    </div>
 				<div>
-					<a href="{{route('produtcs.index',['idCat'=>$category->id] )}}" > <button class="btn btn-primary">Plus de produit de cette categorie</button></a>
+					<a href="{{route('produtcs.index')}}" > <button class="btn btn-primary">Plus de produit de cette categorie</button></a>
 				</div>
 		    @endforeach
 			

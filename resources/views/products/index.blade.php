@@ -49,76 +49,36 @@
                 <div class="col-md-12">
                     <div class="product-filters">
                         <ul>
-                            <li class="active" data-filter="*">All</li>
+							<li class='active'  data-filter="*">All</li>
+							 @foreach ($db_cat as $cat)
+								 <li  data-filter={{".".$cat->id}} >{{$cat->nomCat}}</li>
+							 @endforeach
+                            {{-- 
                             <li data-filter=".strawberry">Strawberry</li>
                             <li data-filter=".berry">Berry</li>
-                            <li data-filter=".lemon">Lemon</li>
+                            <li data-filter=".lemon">Lemon</li> --}}
                         </ul>
                     </div>
                 </div>
             </div>
 
 			<div class="row product-lists">
-				<div class="col-lg-4 col-md-6 text-center strawberry">
+
+				@foreach ($db_produits as $prd)
+					<div class="col-lg-4 col-md-6 text-center {{$prd->categorie_id}} ">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="{{route('produtcs.single-product',['idPr'=>$prd->id])}}"><img src="{{url('storage/images/'.$prd->path)}}" alt="image_produit"></a>
 						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<h3>{{$prd->nomPr}}</h3>
+						<p class="product-price"><span>par unité</span> {{$prd->prixV}} </p>
+						<a href="{{route('produtcs.addToPanier',['idPr'=>$prd->id])}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center berry">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center lemon">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-4.jpg" alt=""></a>
-						</div>
-						<h3>Avocado</h3>
-						<p class="product-price"><span>Per Kg</span> 50$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-5.jpg" alt=""></a>
-						</div>
-						<h3>Green Apple</h3>
-						<p class="product-price"><span>Per Kg</span> 45$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center strawberry">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-6.jpg" alt=""></a>
-						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 80$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
+				@endforeach
+
+				
+				
 			</div>
 
 			<div class="row">
@@ -166,52 +126,7 @@
 	</div>
 	<!-- end logo carousel -->
 
-	<!-- footer -->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box about-widget">
-						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Get in Touch</h2>
-						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box pages">
-						<h2 class="widget-title">Pages</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Shop</a></li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box subscribe">
-						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.html">
-							<input type="email" placeholder="Email">
-							<button type="submit"><i class="fas fa-paper-plane"></i></button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end footer -->
+
 	
 	<!-- copyright -->
 	<div class="copyright">

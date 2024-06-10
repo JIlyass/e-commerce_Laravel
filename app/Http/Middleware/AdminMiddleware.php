@@ -21,7 +21,7 @@ class AdminMiddleware
             if(Auth::user()->role == "admin"){
                 return $next($request);
             }else{
-                return to_route('auth.profile');
+                return to_route('produtcs.index');
 
             }
             return abort(419);

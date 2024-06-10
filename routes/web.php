@@ -52,6 +52,16 @@ Route::controller(AuthController::class)
 
     });
 
-
+Route::get('login',[AuthController::class,'login'])->name("login");
 // Route::resource("products",productsController::class);
-Route::get("/produits/{idCat}",[productsController::class,"index"])->name("produtcs.index");
+Route::get("/produits",[productsController::class,"index"])->name("produtcs.index");
+Route::get("/produits/{idPr}",[productsController::class,"addToPanier"])->middleware("auth")->name("produtcs.addToPanier");
+Route::get("/produits/single-product/{idPr}",[productsController::class,"singleProduct"])->name("produtcs.single-product");
+
+
+Route::get("/about",function(){
+    return view('about');
+});
+Route::get("/contact",function(){
+    return view('contact');
+});

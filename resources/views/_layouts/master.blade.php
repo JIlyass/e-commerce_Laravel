@@ -58,66 +58,14 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="#">Home</a>
-									<ul class="sub-menu">
-										<li><a href="index.html">Static Home</a></li>
-										<li><a href="index_2.html">Slider Home</a></li>
-									</ul>
+								<li class="current-list-item"><a href="{{url('/')}}">Home</a>
+								<li><a href="{{url('/produits')}}">Shop</a></li>
 								</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="404.html">404 page</a></li>
-										<li><a href="about.html">About</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="news.html">News</a></li>
-										<li><a href="shop.html">Shop</a></li>
-									</ul>
-								</li>
-								<li><a href="news.html">News</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">News</a></li>
-										<li><a href="single-news.html">Single News</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
-								</li>
+								<li><a href="{{url('/about')}}">About</a></li>
+								<li><a href="{{url('/contact')}}">Contact</a></li>
 								
-									{{-- @auth
+								
 									
-									<div class="dropdown text-end">
-										<a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-										<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-										</a>
-										<ul class="dropdown-menu text-small" style="">
-										<li><a class="dropdown-item" >Welcome {{Auth::user()->name}}</a></li>
-										{{-- <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li> --}}
-										
-										{{-- <li><hr class="dropdown-divider"></li>
-										<li>
-											<form class="dropdown-item" action="{{route('auth.logout')}}" method="POST">
-											@csrf
-											@method('delete')
-											<input type="submit" value="Sign out">
-											</form>
-										</li>
-										</ul>
-									</div>
-										@else
-										<div class="text-end">
-											<a href="{{route('auth.login')}}" type="button" class="btn btn-outline-secondary me-2">Login</a>
-											<a href="{{route('auth.register')}}" type="button" class="btn btn-warning">Sign-up</a>
-										  </div>
-									@endauth --}} 
 								
 								@auth
 								<li>
@@ -316,8 +264,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
-						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+					<p>Copyrights &copy; 2024 - <a href="https://www.linkedin.com/in/ilyass-jaghdor/">ILYASS JAGHDOR </a> & <a href="https://www.linkedin.com/in/abdelmoula-serghini/">  ABDELMOULA SERGHINI</a>,  All Rights Reserved.<br>
+						 By  <a href="#">OFPPT</a>
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
